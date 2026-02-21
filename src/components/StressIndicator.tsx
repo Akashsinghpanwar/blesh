@@ -114,21 +114,22 @@ export const StressIndicator: React.FC<StressIndicatorProps> = ({
         
         {/* Tick marks */}
         <div className="absolute inset-0">
-          {[0, 30, 55, 75, 100].map((tick, index) => {
+          {[0, 30, 55, 75, 100].map((tick) => {
             const angle = (tick / 100) * 270 + 135;
             const tickRadius = radius + strokeWidth / 2 + 8;
-            const x = size / 2 + tickRadius * Math.cos((angle * Math.PI) / 180);
-            const y = size / 2 + tickRadius * Math.sin((angle * Math.PI) / 180);
+            const x = Math.round((size / 2 + tickRadius * Math.cos((angle * Math.PI) / 180)) * 100) / 100;
+            const y = Math.round((size / 2 + tickRadius * Math.sin((angle * Math.PI) / 180)) * 100) / 100;
             
             return (
               <span
                 key={tick}
                 className="absolute text-xs text-gray-400 font-medium"
                 style={{
-                  left: x,
-                  top: y,
+                  left: `${x}px`,
+                  top: `${y}px`,
                   transform: 'translate(-50%, -50%)',
                 }}
+                suppressHydrationWarning
               >
                 {tick}
               </span>
