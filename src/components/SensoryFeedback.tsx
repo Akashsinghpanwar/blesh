@@ -10,7 +10,8 @@ import {
   Thermometer, 
   Volume2,
   Hand,
-  Waves
+  Waves,
+  Flower2
 } from 'lucide-react';
 import { useBiometricStore, selectIsFeedbackActive, selectFeedbackIntensity, selectStressLevel } from '@/store/biometricStore';
 import { getStressConfig } from '@/lib/stressDetection';
@@ -34,12 +35,28 @@ const feedbackModes: FeedbackMode[] = [
     color: '#10B981',
   },
   {
+    id: 'scent',
+    name: 'Calming Scent',
+    icon: Flower2,
+    description: 'Lavender/chamomile micro-release',
+    activeAt: 0.15,
+    color: '#A855F7',
+  },
+  {
     id: 'haptic',
     name: 'Gentle Vibration',
     icon: Vibrate,
     description: 'Rhythmic haptic pattern',
     activeAt: 0.2,
     color: '#8B5CF6',
+  },
+  {
+    id: 'breathing',
+    name: 'Breath Guide',
+    icon: Waves,
+    description: 'Visual breathing rhythm',
+    activeAt: 0.3,
+    color: '#06B6D4',
   },
   {
     id: 'thermal',
@@ -64,14 +81,6 @@ const feedbackModes: FeedbackMode[] = [
     description: 'Optional calming tone',
     activeAt: 0.7,
     color: '#EC4899',
-  },
-  {
-    id: 'breathing',
-    name: 'Breath Guide',
-    icon: Waves,
-    description: 'Visual breathing rhythm',
-    activeAt: 0.3,
-    color: '#06B6D4',
   },
 ];
 

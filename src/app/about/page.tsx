@@ -22,7 +22,8 @@ import {
   XCircle,
   Lightbulb,
   Target,
-  Waves
+  Waves,
+  Flower2
 } from 'lucide-react';
 
 const fadeIn = {
@@ -241,11 +242,11 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { icon: Lightbulb, name: "LED Color Feedback", desc: "Soft light pulses that shift from calming teal to alerting amber as stress rises", color: "#10B981" },
+              { icon: Flower2, name: "Aromatherapy Release", desc: "Micro-dose calming scents (lavender, chamomile) released automatically from the pendant", color: "#A855F7" },
               { icon: Vibrate, name: "Haptic Vibration", desc: "Gentle rhythmic patterns that provide tactile grounding without being noticeable to others", color: "#8B5CF6" },
               { icon: Thermometer, name: "Temperature Modulation", desc: "Subtle warmth that provides comforting thermal feedback against the skin", color: "#F59E0B" },
               { icon: Volume2, name: "Audio Cue (Optional)", desc: "Quiet tones via Bluetooth that can guide breathing or signal intervention", color: "#EC4899" },
               { icon: Waves, name: "Breathing Guide", desc: "Visual pulsing rhythm that subconsciously guides slower, deeper breathing", color: "#06B6D4" },
-              { icon: Eye, name: "Touch Grounding", desc: "The crystal's faceted surface provides a tactile anchor point for self-soothing", color: "#6366F1" }
             ].map((item, idx) => (
               <motion.div
                 key={idx}
